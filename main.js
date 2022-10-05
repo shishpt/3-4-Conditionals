@@ -4,19 +4,18 @@ const info = [{"name": "Worthington Semor","birth_date": "11/22/1988","children"
 {"name":"Maddalena Heinzler","birth_date":"2/26/2000","children":3,"country":"Slovenia","program":false},
 {"name":"Mirilla Saterweyte","birth_date":"11/7/1984","children":2,"country":"Brazil","program":true},
 {"name":"Audy Dark","birth_date":"4/18/1989","children":5,"country":"China","program":true},
-{"name":"Taffy Grzegorzewski","birth_date":"3/6/1995","children":4,"country":"China","program":false}]
+{"name":"Taffy Grzegorzewski","birth_date":"3/6/1995","children":4,"country":"China","program":false}];
 
-    // Test
+// Test
+
 const list = JSON.stringify(info);
 
 //Print data to screen
-let txt = "";
-for (let x in list) {
-  txt += list[x] + "";
+for (let i = 0; i < info.length; i++) {
+	console.log(info[i]);
+};
 
-document.getElementById("roster").innerHTML = txt;
-}
-
+document.getElementById("roster").innerHTML = list;
 // Is the first person older than the last person?
 // Setup first person
 const fName = info[0].name;
@@ -36,5 +35,26 @@ const tAge = Math.floor(tMSDiff / (365.25*24*60*60*1000));
 document.getElementById("second").innerHTML = tName + " is " + tAge + " years of age.";
 
 // Who is older?
+if (fAge < tAge) {
+  console.log(fName + " is older")
+}
+else {
+  console.log(tName + " is older");
+}
 
 // Does the 2nd person have the same amount of kids as the 3rd?
+
+const sName = info[1].name;
+const sKid = info[1].children;
+const tKid = info[2].children;
+
+if (sKid === tKid) {
+//  console.log(sName + " " + tName + " have the same amount of children." )
+    document.getElementById("k1").innerHTML = tName + " and " + tName + " have the same amount of children."
+}
+else  {  
+//  console.log(tName + " and " + sName + " do not have the same amount of children.")
+    document.getElementById("k1").innerHTML = tName + " and " + tName + " do not have the same amount of children."
+};
+
+
