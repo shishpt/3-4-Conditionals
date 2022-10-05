@@ -10,12 +10,12 @@ const info = [{"name": "Worthington Semor","birth_date": "11/22/1988","children"
 const list = JSON.stringify(info);
 
 //Print data to screen
-let tData = list.length;
-let text = "<ul>";
-for (let i =0; i < tData; i++) {
-  text += "<li>" + list[i] + "</li>";
+let txt = "";
+for (let x in list) {
+  txt += list[x] + "";
+
+document.getElementById("roster").innerHTML = txt;
 }
-text += "</ul>";
 
 // Is the first person older than the last person?
 // Setup first person
@@ -24,7 +24,7 @@ const fBDate = new Date(info[0].birth_date);
 let tDate = new Date();
 const fMSDiff = tDate - fBDate;
 const fAge = Math.floor(fMSDiff / (365.25*24*60*60*1000));
-document.getElementById("first").innerHTML = fName " is " fAge " years old.";
+document.getElementById("first").innerHTML = fName + " is " + fAge + " years of age.";
 
 
 // Setup third person
@@ -33,19 +33,8 @@ const tBDate = new Date(info[2].birth_date);
 const tMSDiff = tDate - tBDate;
 const tAge = Math.floor(tMSDiff / (365.25*24*60*60*1000));
 
-document.getElementById("second").innerHTML = text;
+document.getElementById("second").innerHTML = tName + " is " + tAge + " years of age.";
 
 // Who is older?
-//if
-//  (fAge > tAge) {
-//    document.getElementById("older").innerHTML = "1"
-//} else if {
-//  (fAge == tAge) {
-//    document.getElementById("older").innerHTML = "both"
-//  }
-//else {
-//  document.getElementById("older").innerHTML = "3"
-//}
-//};
 
 // Does the 2nd person have the same amount of kids as the 3rd?
