@@ -6,16 +6,11 @@ const info = [{"name": "Worthington Semor","birth_date": "11/22/1988","children"
 {"name":"Audy Dark","birth_date":"4/18/1989","children":5,"country":"China","program":true},
 {"name":"Taffy Grzegorzewski","birth_date":"3/6/1995","children":4,"country":"China","program":false}];
 
-// Test
+for (var {name: n, birth_date: b, children: c, country: o, program: p} of info) {
 
-const list = JSON.stringify(info);
-
-//Print data to screen
-for (let i = 0; i < info.length; i++) {
-	console.log(info[i]);
+  console.log('name: '+ n , 'birth date: '+ b , 'children: '+ c, 'country: '+ o, 'program: '+ p);
 };
 
-document.getElementById("roster").innerHTML = list;
 // Is the first person older than the last person?
 // Setup first person
 const fName = info[0].name;
@@ -50,11 +45,41 @@ const tKid = info[2].children;
 
 if (sKid === tKid) {
 //  console.log(sName + " " + tName + " have the same amount of children." )
-    document.getElementById("k1").innerHTML = tName + " and " + tName + " have the same amount of children."
+    document.getElementById("k1").innerHTML = fName + " and " + tName + " have the same amount of children."
 }
 else  {  
 //  console.log(tName + " and " + sName + " do not have the same amount of children.")
-    document.getElementById("k1").innerHTML = tName + " and " + tName + " do not have the same amount of children."
+    document.getElementById("k1").innerHTML = fName + " and " + tName + " do not have the same amount of children."
 };
 
+//  1st and 4th can program 
+const fProgram = info[0].program;
+const foName = info[3].name;
+const foProgram = info[3].program;
 
+if (fProgram == true && foProgram == true) {
+  console.log("Yay " + fName + " " + foName + " can both program.")
+}
+else {
+  console.log("When it comes to " + fName + " " + "and " + foName + " LMGTFY.")
+}
+
+//Nationality of 2nd person 
+const sCountry = info[1].country;
+if (sCountry == "Iceland") {
+  console.log("Hæ")
+}
+else if (sCountry == "Spain") {
+  console.log("Hola")
+}
+else if (sCountry == "Korea") {
+  console.log("여보세요")
+}
+else {
+  console.log("Hello")
+}
+
+//Tertiary operation checking to see if 2nd person has 5 characters in their name
+
+let sLName = (sName.length < 5) ? "Less than 5":"More than 5";
+console.log(sLName);

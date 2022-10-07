@@ -2,3 +2,12 @@ body {
   margin: 0;
   padding: 0;
 }
+#cScreen {
+  margin-top: 25%;
+  margin-left:25%;
+  padding: 10%;
+  height: 30%;
+  width: 30%;
+  background-color: grey;
+  border: 2px black solid;
+}
