@@ -1,13 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+
 body {
   margin: 0;
   padding: 0;
+  color: white;
 }
-#cScreen {
-  margin-top: 25%;
-  margin-left:25%;
-  padding: 10%;
-  height: 30%;
-  width: 30%;
-  background-color: grey;
-  border: 2px black solid;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.a4 {
+  position:absolute;
+  height: 550px;
+  width: 450px;
+  background:	rgb(80, 27, 0);
+  margin: -275px -225px;
+  left: 50%;
+  top: 50%;
+  box-shadow: 0px 0px 5px 0px #888;
+}
+
+.a4::before {
+  content: '';
+  position: absolute;
+  left: 60px;
+  height: 100%;
+  width: 2px;
+  background: rgba(255,0,0,0.4);
+}
+
+.paperLines {
+  margin-top: 40px;
+  height: calc(100% - 40px);
+  width: 100%;
+  background-image: repeating-linear-gradient(white 0px, white 24px, steelblue 25px);
+}
+#question {
+  color:red;
+}
+h1 {
+  color: black;
+}
+
+#first, #second, #older, #k1 {
+  color: blue;
+}
+h1, p  {
+  position: relative;
+  top: 30px;
+  left: 65px;
+  bottom: 10px;
+  right: 10px;
+  line-height: 25px;
+  font-family: 'Caveat';
+  overflow: hidden;
+  outline: none;
+  list-style-type: none;
+
+}
+
+.punch {
+  position: absolute;
+  left: 10px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 2px 0px #888;
+  background-color: white;
+}
+
+.threeTop {
+  top: 10%;
+ }
+.threeMiddle {
+  top: 50%;
+}
+.threeBottom {
+  bottom: 10%
+}
+
+@media only screen and (max-width: 800px) {
+  .a4 {
+    position: absolute;
+    height: 300px;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 0px 5px 0px #888;
+  }
+  .punch {
+    display: none;
+  }
+
+@media only screen and (max-width: 400px) {
+  body {
+    background-color: lightblue;
+  }
 }
